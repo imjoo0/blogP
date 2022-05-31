@@ -1,0 +1,23 @@
+{#새 글을 작성할 수 있도록, templates 폴더 안에 form 태그가 존재하는 new.html 을 만들고, Views.py 과 Urls.py 에 적절한 코드를 작성해보세요.#}
+{% extends 'base.html' %}
+{% block content %}
+    <div class="wrap">
+        <h2 class="title-center"> 블로그 </h2>
+        <form class="form-area" method="post" action="/new/">
+            <div class="form-group mt-2 mb-2">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" name="title">
+                <label for="desc">설명</label>
+                <input type="text" class="form-control" id="desc" name="desc">
+                <label for="category">카테고리</label>
+                <select name="category">
+                    <option value="">카테고리선택</option>
+                    <option value="movie">movie</option>
+                    <option value="variety">variety</option>
+                    <option value="drama">drama</option>
+                </select>
+                <button type="submit" class="btn btn-primary">등록</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
